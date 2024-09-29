@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Sensor</title>
+</head>
+
+<body>
+
+    <h1>Registro de Sensor</h1>
+
+    <form action="#" method="post">
+        <label for="nombre">Nombre del elemento:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="descripcion">Descripción del elemento:</label><br>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="numSerie">Número de serie:</label><br>
+        <input type="text" id="numSerie" name="numSerie" required><br><br>
+
+        <label>Estado:</label><br>
+        <input type="checkbox" id="activo" name="estado" value="activo">
+        <label for="activo">Activo</label><br>
+        <input type="checkbox" id="inactivo" name="estado" value="inactivo">
+        <label for="inactivo">Inactivo</label><br><br>
+
+        <label>Prioridad:</label><br>
+        <input type="radio" id="alta" name="prioridad" value="alta" required>
+        <label for="alta">Alta</label><br>
+        <input type="radio" id="media" name="prioridad" value="media">
+        <label for="media">Media</label><br>
+        <input type="radio" id="baja" name="prioridad" value="baja">
+        <label for="baja">Baja</label><br><br>
+
+        <input type="submit" value="Registrar Sensor">
+    </form>
+
+    <!-- Navegación -->
+    <nav>
+        <ul>
+            <li><a href="formulario.html">Formulario de Guitarra</a></li>
+            <li><a href="tabla.html">Tabla de Guitarras</a></li>
+            <li><a href="detalle_guitarra.html">Detalles de Guitarra</a></li>
+            <li><a href="ofertas_especiales.html">Ofertas Especiales</a></li>
+            <li><a href="historial_compras.html">Historial de Compras</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
