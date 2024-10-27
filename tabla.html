@@ -1,55 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/tabla.js" defer></script>
+    <title>Tabla de Elementos con Filtro</title>
+  </head>
+  <body>
+    <h1>Elementos Monitorizados</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de Sensores</title>
-</head>
+    <input
+      type="text"
+      id="filtro"
+      placeholder="Buscar por nombre o descripción"
+      style="width: 300px"
+    />
 
-<body>
-
-    <h1>Listado de Sensores Registrados</h1>
-
-    <table border="1" cellpadding="5" cellspacing="0">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Número de Serie</th>
-                <th>Estado</th>
-                <th>Prioridad</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Sensor A</td>
-                <td>Sensor de temperatura</td>
-                <td>12345A</td>
-                <td>Activo</td>
-                <td>Alta</td>
-            </tr>
-            <tr>
-                <td>Sensor B</td>
-                <td>Sensor de presión</td>
-                <td>67890B</td>
-                <td>Inactivo</td>
-                <td>Media</td>
-            </tr>
-        </tbody>
+    <table id="tablaElementos" border="10" cellpadding="15" cellspacing="1">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Número de Serie</th>
+          <th>Estado</th>
+          <th>Prioridad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="contenidoTabla">
+        <!-- JS -->
+      </tbody>
     </table>
 
     <!-- Navegación -->
     <nav>
-        <ul>
-            <li><a href="formulario.html">Formulario de Guitarra</a></li>
-            <li><a href="tabla.html">Tabla de Guitarras</a></li>
-            <li><a href="detalle_guitarra.html">Detalles de Guitarra</a></li>
-            <li><a href="ofertas_especiales.html">Ofertas Especiales</a></li>
-            <li><a href="historial_compras.html">Historial de Compras</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Formulario de Guitarra</a></li>
+        <li><a href="tabla.html">Tabla de Guitarras</a></li>
+        <li><a href="detalle.html">Detalles de Guitarra</a></li>
+        <li><a href="ofertas.html">Ofertas Especiales</a></li>
+        <li><a href="historial.html">Historial de Compras</a></li>
+      </ul>
     </nav>
-
-</body>
-
+  </body>
 </html>
