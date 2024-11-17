@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="js/tabla.js" defer></script>
-    <title>Tabla de Elementos con Filtro</title>
-  </head>
-  <body>
-    <h1>Elementos Monitorizados</h1>
 
-    <input
-      type="text"
-      id="filtro"
-      placeholder="Buscar por nombre o descripción"
-      style="width: 300px"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="js/tabla.js" defer></script>
+  <title>Tabla de Elementos con Filtro</title>
+</head>
 
-    <table id="tablaElementos" border="10" cellpadding="15" cellspacing="1">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Descripción</th>
-          <th>Número de Serie</th>
-          <th>Estado</th>
-          <th>Prioridad</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody id="contenidoTabla">
-        <!-- JS -->
-      </tbody>
-    </table>
+<body>
+  <h1>Elementos Monitorizados</h1>
 
-    <!-- Navegación -->
-    <nav>
-      <ul>
-        <li><a href="index.html">Formulario de Guitarra</a></li>
-        <li><a href="tabla.html">Tabla de Guitarras</a></li>
-        <li><a href="detalle.html">Detalles de Guitarra</a></li>
-        <li><a href="ofertas.html">Ofertas Especiales</a></li>
-        <li><a href="historial.html">Historial de Compras</a></li>
-      </ul>
-    </nav>
-  </body>
+  <input type="text" id="filtro" placeholder="Buscar por nombre o descripción" style="width: 300px" />
+  <button id="btnAgregar">Agregar Elemento</button>
+  <table id="tablaElementos" border="10" cellpadding="15" cellspacing="1">
+    <thead>
+      <tr>
+        <th>Nºid</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Número de Serie</th>
+        <th>Estado</th>
+        <th>Prioridad</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="contenidoTabla">
+      <!-- JS -->
+    </tbody>
+  </table>
+  <script src="tabla.js"></script>
+  <!-- Navegación -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Formulario de Guitarra</a></li>
+      <li><a href="tabla.html">Tabla de Guitarras</a></li>
+      <li><a href="detalle.html">Detalles de Guitarra</a></li>
+      <li><a href="ofertas.html">Ofertas Especiales</a></li>
+      <li><a href="historial.html">Historial de Compras</a></li>
+    </ul>
+  </nav>
+</body>
+
 </html>
