@@ -18,6 +18,10 @@ class Response
             'success' => $this->success,
             'message' => $this->message,
             'data' => $this->data
-        ]);
+        ], JSON_PRETTY_PRINT);
+    }
+
+    public function toHistoryal(){
+        
     }
 }

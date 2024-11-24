@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Sensor</title>
-  </head>
 
-  <body>
-    <h1>Registro de Sensor</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/nav.js" defer></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-lg mx-auto p-6 bg-white rounded shadow-lg">
+    <h1 class="text-2xl font-bold mb-6 text-center">Registro</h1>
 
     <form action="./createElement.php" method="POST">
-      <label for="nombre">Nombre:</label><br />
-      <input type="text" id="nombre" name="nombre" /><br /><br />
+      <div class="mb-4">
+        <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"
+          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+      </div>
 
-      <label for="descripcion">Descripción:</label><br />
-      <textarea
-        id="descripcion"
-        name="descripcion"
-        rows="4"
-        cols="50"
-      ></textarea
-      ><br /><br />
+      <div class="mb-4">
+        <label for="descripcion" class="block text-sm font-medium text-gray-700">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="4"
+          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+      </div>
 
-      <label for="numSerie">Número de serie:</label><br />
-      <input type="text" id="numSerie" name="numSerie" /><br /><br />
+      <div class="mb-4">
+        <label for="numSerie" class="block text-sm font-medium text-gray-700">Número de serie:</label>
+        <input type="text" id="numSerie" name="numSerie"
+          class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+      </div>
 
-      <label>Estado:</label><br />
-      <input type="checkbox" id="activo" name="estado" value="activo" />
-      <label for="estado">Activo/Inactivo</label><br /><br />
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Estado:</label>
+        <div class="flex items-center">
+          <input type="checkbox" id="activo" name="estado" value="activo"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+          <label for="estado" class="ml-2 text-sm text-gray-700">Activo/Inactivo</label>
+        </div>
+      </div>
 
-      <label>Prioridad:</label><br />
-      <input type="radio" id="alta" name="prioridad" value="alta" />
-      <label for="alta">Alta</label><br />
-      <input type="radio" id="media" name="prioridad" value="media" />
-      <label for="media">Media</label><br />
-      <input type="radio" id="baja" name="prioridad" value="baja" />
-      <label for="baja">Baja</label><br /><br />
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Prioridad:</label>
+        <div class="flex items-center mb-2">
+          <input type="radio" id="alta" name="prioridad" value="alta"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300" />
+          <label for="alta" class="ml-2 text-sm text-gray-700">Alta</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input type="radio" id="media" name="prioridad" value="media"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300" />
+          <label for="media" class="ml-2 text-sm text-gray-700">Media</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input type="radio" id="baja" name="prioridad" value="baja"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300" />
+          <label for="baja" class="ml-2 text-sm text-gray-700">Baja</label>
+        </div>
+      </div>
 
-      <input type="submit" value="Registrar Sensor" />
+      <div class="mb-4">
+        <input type="submit" value="Registrar Sensor"
+          class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" />
+      </div>
     </form>
+  </div>
 
-    <!-- Navegación -->
-    <nav>
-      <ul>
-        <li><a href="index.html">Formulario de Guitarra</a></li>
-        <li><a href="tabla.html">Tabla de Guitarras</a></li>
-        <li><a href="detalle.html">Detalles de Guitarra</a></li>
-        <li><a href="ofertas.html">Ofertas Especiales</a></li>
-        <li><a href="historial.html">Historial de Compras</a></li>
-      </ul>
-    </nav>
-    <!-- <script src="./JS/JavaScript.js"></script> -->
-  </body>
+</body>
+
 </html>

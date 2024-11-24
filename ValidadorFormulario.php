@@ -4,7 +4,6 @@ class ValidadorFormulario
 {
     private $errores = [];
 
-    // Método para validar el nombre
     public function validarNombre($nombre)
     {
         if (empty($nombre)) {
@@ -12,7 +11,6 @@ class ValidadorFormulario
         }
     }
 
-    // Método para validar la descripción
     public function validarDescripcion($descripcion)
     {
         if (empty($descripcion)) {
@@ -20,7 +18,6 @@ class ValidadorFormulario
         }
     }
 
-    // Método para validar el número de serie
     public function validarNumSerie($numSerie)
     {
         if (empty($numSerie)) {
@@ -28,7 +25,6 @@ class ValidadorFormulario
         }
     }
 
-    // Método para validar la prioridad
     public function validarPrioridad($prioridad)
     {
         if (empty($prioridad)) {
@@ -36,13 +32,11 @@ class ValidadorFormulario
         }
     }
 
-    // Método para obtener los errores
     public function obtenerErrores()
     {
         return $this->errores;
     }
 
-    // Método para verificar si hay errores
     public function tieneErrores()
     {
         return !empty($this->errores);
