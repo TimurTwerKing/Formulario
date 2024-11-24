@@ -1,7 +1,0 @@
-{"nombre":"Timur","descripcion":"DOWN","numSerie":"666","estado":"activo","prioridad":"alta"}
-{"nombre":"A","descripcion":"d","numSerie":"23453","estado":"activo","prioridad":"alta"}
-{"nombre":"qwe","descripcion":"qwe","numSerie":"qwe","estado":"activo","prioridad":"media"}
-{"nombre":"Pabloo","descripcion":"puta","numSerie":"asd","estado":"activo","prioridad":"alta"}
-{"nombre":"Begonia","descripcion":"pizza","numSerie":"1","estado":"activo","prioridad":"alta"}
-{"nombre":"1111","descripcion":"1111","numSerie":"111","estado":"activo","prioridad":"media"}
-{"nombre":"Kiri","descripcion":"Bogach","numSerie":"31","estado":"activo","prioridad":"alta"}

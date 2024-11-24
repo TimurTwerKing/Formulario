@@ -6,40 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="js/tabla.js" defer></script>
   <title>Tabla de Elementos con Filtro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/nav.js" defer></script>
 </head>
 
-<body>
-  <h1>Elementos Monitorizados</h1>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-7xl mx-auto p-6 bg-white rounded shadow-md">
+    <h1 class="text-2xl font-bold mb-4">Elementos Monitorizados</h1>
+    <div class="mb-4">
+      <input type="text" id="filtro" placeholder="Buscar por nombre o descripción" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+    </div>
+    <div class="overflow-x-auto">
+      <table id="tablaElementos" class="min-w-full bg-white text-left text-gray-800 shadow-md">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border px-4 py-2">Nºid</th>
+            <th class="border px-4 py-2">Nombre</th>
+            <th class="border px-4 py-2">Descripción</th>
+            <th class="border px-4 py-2">Número de Serie</th>
+            <th class="border px-4 py-2">Estado</th>
+            <th class="border px-4 py-2">Prioridad</th>
+            <th class="border px-4 py-2">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="contenidoTabla">
+        </tbody>
+      </table>
 
-  <input type="text" id="filtro" placeholder="Buscar por nombre o descripción" style="width: 300px" />
-  <button id="btnAgregar">Agregar Elemento</button>
-  <table id="tablaElementos" border="10" cellpadding="15" cellspacing="1">
-    <thead>
-      <tr>
-        <th>Nºid</th>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Número de Serie</th>
-        <th>Estado</th>
-        <th>Prioridad</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody id="contenidoTabla">
-      <!-- JS -->
-    </tbody>
-  </table>
-  <script src="tabla.js"></script>
-  <!-- Navegación -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Formulario de Guitarra</a></li>
-      <li><a href="tabla.html">Tabla de Guitarras</a></li>
-      <li><a href="detalle.html">Detalles de Guitarra</a></li>
-      <li><a href="ofertas.html">Ofertas Especiales</a></li>
-      <li><a href="historial.html">Historial de Compras</a></li>
-    </ul>
-  </nav>
+      <!-- EDICION -->
+      <div id="formularioEdicion" class="hidden p-6 bg-gray-100 rounded shadow-md">
+        <h2 class="text-xl font-bold mb-4">Editar Elemento</h2>
+        <form id="formEditarElemento" class="space-y-4" onsubmit="event.preventDefault(); guardarCambiosElemento();">
+          <input type="hidden" id="idElemento" />
+          <div>
+            <label for="nombre" class="block text-sm font-medium">Nombre</label>
+            <input type="text" id="nombre" class="w-full p-2 border border-gray-300 rounded-md" required />
+          </div>
+          <div>
+            <label for="descripcion" class="block text-sm font-medium">Descripción</label>
+            <input type="text" id="descripcion" class="w-full p-2 border border-gray-300 rounded-md" required />
+          </div>
+          <div>
+            <label for="numSerie" class="block text-sm font-medium">Número de Serie</label>
+            <input type="text" id="numSerie" class="w-full p-2 border border-gray-300 rounded-md" />
+          </div>
+          <div>
+            <label for="estado" class="block text-sm font-medium">Estado</label>
+            <select id="estado" class="w-full p-2 border border-gray-300 rounded-md">
+              <option value="activo">Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+          <div>
+            <label for="prioridad" class="block text-sm font-medium">Prioridad</label>
+            <select id="prioridad" class="w-full p-2 border border-gray-300 rounded-md">
+              <option value="alta">Alta</option>
+              <option value="media">Media</option>
+              <option value="baja">Baja</option>
+            </select>
+          </div>
+          <div class="flex space-x-4">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Guardar Cambios</button>
+            <button type="button" onclick="cancelarEdicion();" class="bg-gray-500 text-white px-4 py-2 rounded">Cancelar</button>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
 </body>
 
 </html>
