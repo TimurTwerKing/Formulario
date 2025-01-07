@@ -133,13 +133,43 @@ class Element implements ToJson
         $args = $this->getArguments($_POST);
         $args['id'] = $id;
 
+        // Importar y utilizar el validador
+        require_once '../ValidadorFormulario.php';
+        $validador = new ValidadorFormulario();
+
+        function capitalizarPrimeraLetra($texto)
+        {
+            return ucfirst(strtolower($texto));
+        }
+
+        // Capitalizar primeras letras y validar campos
+        if (!empty($args['nombre'])) {
+            $args['nombre'] = capitalizarPrimeraLetra($args['nombre']);
+            $validador->validarNombre($args['nombre']);
+        }
+        if (!empty($args['descripcion'])) {
+            $args['descripcion'] = capitalizarPrimeraLetra($args['descripcion']);
+            $validador->validarDescripcion($args['descripcion']);
+        }
+        if (!empty($args['numSerie'])) {
+            $validador->validarNumSerie($args['numSerie']);
+        }
+        if (!empty($args['prioridad'])) {
+            $validador->validarPrioridad($args['prioridad']);
+        }
+
+        if ($validador->tieneErrores()) {
+            $this->respond(false, 'Errores en los datos enviados.', $validador->obtenerErrores());
+            return;
+        }
+
         $sql = "UPDATE elementos SET 
-                    nombre = COALESCE(:nombre, nombre), 
-                    descripcion = COALESCE(:descripcion, descripcion), 
-                    numSerie = COALESCE(:numSerie, numSerie),
-                    estado = COALESCE(:estado, estado),
-                    prioridad = COALESCE(:prioridad, prioridad)
-                WHERE id = :id";
+                nombre = COALESCE(:nombre, nombre), 
+                descripcion = COALESCE(:descripcion, descripcion), 
+                numSerie = COALESCE(:numSerie, numSerie),
+                estado = COALESCE(:estado, estado),
+                prioridad = COALESCE(:prioridad, prioridad)
+            WHERE id = :id";
 
         $stmt = $this->cnn()->prepare($sql);
 
@@ -149,4 +179,6 @@ class Element implements ToJson
             $this->respond(false, 'Error al actualizar el elemento.');
         }
     }
+
+
 }

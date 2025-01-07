@@ -5,5 +5,3 @@ require_once './models/Element.php';
 
 $elemento = new Element();
 $elemento->getElement();
-
-
