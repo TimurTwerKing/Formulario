@@ -5,7 +5,7 @@ class Response
     private $message;
     private $data;
 
-    public function __construct($success, $message, $data = null)
+    public function __construct($success, $message, $data = [])
     {
         $this->success = $success;
         $this->message = $message;
@@ -18,10 +18,6 @@ class Response
             'success' => $this->success,
             'message' => $this->message,
             'data' => $this->data
-        ], JSON_PRETTY_PRINT);
-    }
-
-    public function toHistoryal(){
-        
+        ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     }
 }
